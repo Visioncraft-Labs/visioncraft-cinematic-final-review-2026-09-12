@@ -4,16 +4,14 @@ import re, shutil
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'dist'
 RED=ROOT/'redesign'
+VERSION='20260912-2219'
 
-# Copy the shared cinematic assets first so every generated route can use them.
 shutil.copy2(RED/'cinematic.css',OUT/'cinematic.css')
 shutil.copy2(RED/'cinematic-global.css',OUT/'cinematic-global.css')
 shutil.copy2(RED/'cinematic.js',OUT/'cinematic.js')
 (OUT/'images').mkdir(parents=True, exist_ok=True)
 shutil.copy2(RED/'hero-art.webp',OUT/'images'/'visioncraft-hero-art.webp')
 
-# Replace the homepage body with the approved cinematic composition. The homepage
-# has its own header/footer so the legacy shell cannot change the mockup proportions.
 index=OUT/'index.html'
 doc=index.read_text()
 home=(RED/'home.html').read_text()
@@ -21,7 +19,6 @@ doc=re.sub(r'<main id="main">.*?</main>',home,doc,flags=re.S)
 doc=doc.replace('<body>','<body class="vc-home-page">',1)
 index.write_text(doc)
 
-# Add the live Address12 website anywhere the generated project content appears.
 work_page=OUT/'work.html'
 if work_page.exists():
     doc=work_page.read_text()
@@ -40,35 +37,32 @@ if address_page.exists():
     )
     address_page.write_text(doc)
 
-# Apply the cinematic design system. IMPORTANT: the homepage intentionally does NOT
-# load cinematic-global.css because that stylesheet is for secondary pages and its
-# broad !important rules would override the approved homepage composition.
 for page in OUT.glob('*.html'):
     doc=page.read_text()
     if page.name == 'index.html':
-        if 'href="cinematic.css"' not in doc:
+        if 'href="cinematic.css' not in doc:
             doc=doc.replace(
                 '<link rel="stylesheet" href="experience.css">',
-                '<link rel="stylesheet" href="experience.css"><link rel="stylesheet" href="cinematic.css">'
+                f'<link rel="stylesheet" href="experience.css"><link rel="stylesheet" href="cinematic.css?v={VERSION}">'
             )
-        doc=doc.replace('<link rel="stylesheet" href="cinematic-global.css">','')
+        doc=re.sub(r'<link rel="stylesheet" href="cinematic-global\.css(?:\?[^\"]*)?">','',doc)
+        doc=doc.replace('src="cinematic.js"',f'src="cinematic.js?v={VERSION}"')
     else:
-        if 'href="cinematic.css"' not in doc:
+        if 'href="cinematic.css' not in doc:
             doc=doc.replace(
                 '<link rel="stylesheet" href="experience.css">',
                 '<link rel="stylesheet" href="experience.css"><link rel="stylesheet" href="cinematic.css"><link rel="stylesheet" href="cinematic-global.css">'
             )
         elif 'href="cinematic-global.css"' not in doc:
-            doc=doc.replace(
-                '<link rel="stylesheet" href="cinematic.css">',
-                '<link rel="stylesheet" href="cinematic.css"><link rel="stylesheet" href="cinematic-global.css">'
-            )
-    if 'src="cinematic.js"' not in doc:
+            doc=re.sub(r'(<link rel="stylesheet" href="cinematic\.css(?:\?[^\"]*)?">)',r'\1<link rel="stylesheet" href="cinematic-global.css">',doc)
+    if 'src="cinematic.js' not in doc:
         doc=doc.replace(
             '<script src="experience.js" defer></script>',
             '<script src="experience.js" defer></script><script src="cinematic.js" defer></script>'
         )
     if page.name == 'index.html':
+        if f'src="cinematic.js?v={VERSION}"' not in doc:
+            doc=doc.replace('src="cinematic.js"',f'src="cinematic.js?v={VERSION}"')
         doc=doc.replace('<meta name="theme-color" content="#06080D">','<meta name="theme-color" content="#08090A">')
     else:
         doc=doc.replace('<meta name="theme-color" content="#06080D">','<meta name="theme-color" content="#F2F0EA">')
