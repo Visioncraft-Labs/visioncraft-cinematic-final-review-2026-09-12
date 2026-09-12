@@ -7,6 +7,7 @@ RED=ROOT/'redesign'
 
 # Copy the shared cinematic assets first so every generated route can use them.
 shutil.copy2(RED/'cinematic.css',OUT/'cinematic.css')
+shutil.copy2(RED/'cinematic-global.css',OUT/'cinematic-global.css')
 shutil.copy2(RED/'cinematic.js',OUT/'cinematic.js')
 
 # Replace the homepage body with the approved cinematic composition while preserving
@@ -17,14 +18,19 @@ home=(RED/'home.html').read_text()
 doc=re.sub(r'<main id="main">.*?</main>',home,doc,flags=re.S)
 index.write_text(doc)
 
-# Apply the same cinematic design system to EVERY generated HTML route. This keeps
+# Apply the cinematic design system to EVERY generated HTML route. This keeps
 # service, work, about, insights, investment and contact pages visually consistent.
 for page in OUT.glob('*.html'):
     doc=page.read_text()
     if 'href="cinematic.css"' not in doc:
         doc=doc.replace(
             '<link rel="stylesheet" href="experience.css">',
-            '<link rel="stylesheet" href="experience.css"><link rel="stylesheet" href="cinematic.css">'
+            '<link rel="stylesheet" href="experience.css"><link rel="stylesheet" href="cinematic.css"><link rel="stylesheet" href="cinematic-global.css">'
+        )
+    elif 'href="cinematic-global.css"' not in doc:
+        doc=doc.replace(
+            '<link rel="stylesheet" href="cinematic.css">',
+            '<link rel="stylesheet" href="cinematic.css"><link rel="stylesheet" href="cinematic-global.css">'
         )
     if 'src="cinematic.js"' not in doc:
         doc=doc.replace(
