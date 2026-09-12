@@ -9,13 +9,16 @@ RED=ROOT/'redesign'
 shutil.copy2(RED/'cinematic.css',OUT/'cinematic.css')
 shutil.copy2(RED/'cinematic-global.css',OUT/'cinematic-global.css')
 shutil.copy2(RED/'cinematic.js',OUT/'cinematic.js')
+(OUT/'images').mkdir(parents=True, exist_ok=True)
+shutil.copy2(RED/'hero-art.webp',OUT/'images'/'visioncraft-hero-art.webp')
 
-# Replace the homepage body with the approved cinematic composition while preserving
-# generated metadata, schema, header and footer.
+# Replace the homepage body with the approved cinematic composition. The homepage
+# has its own header/footer so the legacy shell cannot change the mockup proportions.
 index=OUT/'index.html'
 doc=index.read_text()
 home=(RED/'home.html').read_text()
 doc=re.sub(r'<main id="main">.*?</main>',home,doc,flags=re.S)
+doc=doc.replace('<body>','<body class="vc-home-page">',1)
 index.write_text(doc)
 
 # Apply the cinematic design system to EVERY generated HTML route. This keeps
@@ -37,7 +40,11 @@ for page in OUT.glob('*.html'):
             '<script src="experience.js" defer></script>',
             '<script src="experience.js" defer></script><script src="cinematic.js" defer></script>'
         )
-    doc=doc.replace('<meta name="theme-color" content="#06080D">','<meta name="theme-color" content="#F2F0EA">')
+    # Dark browser chrome on the cinematic homepage; warm ivory on secondary pages.
+    if page.name == 'index.html':
+        doc=doc.replace('<meta name="theme-color" content="#06080D">','<meta name="theme-color" content="#08090A">')
+    else:
+        doc=doc.replace('<meta name="theme-color" content="#06080D">','<meta name="theme-color" content="#F2F0EA">')
     page.write_text(doc)
 
 print('Applied VisionCraft cinematic design system to all generated pages.')
