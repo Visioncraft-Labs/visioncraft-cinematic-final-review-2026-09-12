@@ -1,0 +1,63 @@
+/* VisionCraft Labs — shared cinematic visual system for every non-home route */
+body{background:var(--vc-ivory,#f2f0ea)!important;color:var(--vc-ink,#0a0a0a)!important;font-family:'General Sans',Inter,Arial,sans-serif!important;}
+body::before{display:none!important;}
+header{padding:18px 0!important;background:rgba(242,240,234,.82)!important;border-bottom:1px solid rgba(10,10,10,.08)!important;backdrop-filter:blur(18px) saturate(140%)!important;-webkit-backdrop-filter:blur(18px) saturate(140%)!important;}
+header.scrolled{padding:12px 0!important;background:rgba(242,240,234,.94)!important;border-color:rgba(10,10,10,.12)!important;}
+header .logo{color:#0a0a0a!important;display:flex!important;align-items:center!important;gap:10px!important;}
+header .official-mark{display:inline-grid!important;place-items:center!important;width:34px!important;height:34px!important;overflow:visible!important;}
+header .official-mark img{width:34px!important;height:34px!important;object-fit:contain!important;filter:drop-shadow(0 8px 12px rgba(0,0,0,.12))!important;}
+header .brand-name,header .brand-name span{color:#0a0a0a!important;background:none!important;-webkit-text-fill-color:initial!important;}
+header .nav-links a,header .nav-cta,header .menu-toggle{color:#0a0a0a!important;}
+header .nav-links a[aria-current="page"]{opacity:1!important;font-weight:700!important;}
+header .nav-cta{border:1px solid rgba(10,10,10,.2)!important;background:#0a0a0a!important;color:#fff!important;border-radius:999px!important;}
+main{background:var(--vc-ivory,#f2f0ea)!important;}
+.page-hero{padding:180px 0 110px!important;background:radial-gradient(circle at 85% 18%,rgba(255,255,255,.9),transparent 30%),linear-gradient(125deg,#f7f4ed 0%,#ece7df 60%,#ddd7ce 100%)!important;border-bottom:1px solid rgba(10,10,10,.08)!important;}
+.page-hero .wrap{max-width:1500px!important;}
+.page-hero .eyebrow{color:#6f6a64!important;text-transform:uppercase!important;letter-spacing:.16em!important;font-size:10px!important;}
+.page-hero h1{color:#0a0a0a!important;font-size:clamp(56px,7vw,118px)!important;font-weight:450!important;line-height:.9!important;letter-spacing:-.065em!important;max-width:1100px!important;}
+.page-hero h1 .accent{color:#766f69!important;background:none!important;-webkit-text-fill-color:initial!important;}
+.page-hero p{color:#4f4b46!important;font-size:clamp(17px,1.5vw,22px)!important;line-height:1.6!important;max-width:780px!important;}
+section{position:relative;}
+main section:not(.page-hero):not(.vc-work):not(.vc-process):not(.vc-insights){background:var(--vc-ivory,#f2f0ea)!important;color:#0a0a0a!important;}
+.wrap{max-width:1500px!important;padding-left:clamp(20px,4vw,72px)!important;padding-right:clamp(20px,4vw,72px)!important;}
+.section-head h2,.case-story h2,.case-visual h2,.service-intro h2,.closing h2,.lab-callout h2{font-weight:450!important;letter-spacing:-.055em!important;line-height:.95!important;color:#0a0a0a!important;}
+.eyebrow{letter-spacing:.15em!important;text-transform:uppercase!important;font-size:10px!important;color:#706a64!important;}
+.accent{color:#766f69!important;background:none!important;-webkit-text-fill-color:initial!important;}
+.btn-primary{background:#0a0a0a!important;color:#fff!important;border-radius:999px!important;box-shadow:none!important;}
+.btn-ghost{border:1px solid rgba(10,10,10,.22)!important;color:#0a0a0a!important;border-radius:999px!important;background:rgba(255,255,255,.25)!important;}
+.text-link{color:#0a0a0a!important;text-underline-offset:5px!important;}
+.selected-work,.capability-section,.process-section,.film-feature,.case-story,.case-visual,.service-grid,.service-detail,.insight-grid,.contact-section,.investment-section{padding-top:110px!important;padding-bottom:110px!important;}
+.project-story{border-top:1px solid rgba(10,10,10,.14)!important;padding:42px 0!important;}
+.project-story h2,.project-story h2 a{color:#0a0a0a!important;font-weight:450!important;letter-spacing:-.045em!important;}
+.project-story p,.service-card p,.case-story p,.insight-card p{color:#5f5a55!important;}
+.project-media,.bevel,.service-card,.insight-card,.contact-card,.investment-card{border:1px solid rgba(10,10,10,.09)!important;background:#f8f6f0!important;box-shadow:0 24px 70px rgba(0,0,0,.06)!important;border-radius:2px!important;}
+.project-media img,.project-media video,.bevel img,.bevel video{filter:none!important;}
+.capability-list a,.service-card,.insight-card{border-color:rgba(10,10,10,.13)!important;}
+.capability-list a:hover,.service-card:hover,.insight-card:hover{background:#fff!important;transform:translateY(-5px)!important;}
+.process-section{background:#0a0a0a!important;color:#fff!important;}
+.process-section h2,.process-section h3,.process-section .eyebrow{color:#fff!important;}
+.process-section p{color:#aaa!important;}
+.process-track li{border-color:#3f3f3f!important;}
+.film-feature{background:#0a0a0a!important;color:#fff!important;}
+.film-feature h2,.film-feature .eyebrow,.film-feature .text-link{color:#fff!important;}
+.film-feature p,.film-feature figcaption{color:#aaa!important;}
+.closing{background:#0a0a0a!important;color:#fff!important;padding:120px 0!important;}
+.closing h2,.closing .eyebrow{color:#fff!important;}
+.closing .btn-primary{background:#fff!important;color:#0a0a0a!important;}
+.closing .btn-ghost{border-color:#555!important;color:#fff!important;background:transparent!important;}
+footer{background:#080808!important;color:#fff!important;border-top:1px solid #222!important;}
+footer a,footer h4,footer p,footer span{color:#fff!important;}
+footer .footer-bottom,footer small{color:#999!important;}
+footer .social-icon{filter:none!important;}
+input,textarea,select{background:#fff!important;color:#0a0a0a!important;border:1px solid rgba(10,10,10,.18)!important;border-radius:0!important;}
+input:focus,textarea:focus,select:focus{outline:2px solid rgba(10,10,10,.35)!important;outline-offset:2px!important;}
+#media-dialog{background:#050505!important;color:#fff!important;}
+@media(max-width:900px){
+  .page-hero{padding-top:145px!important;padding-bottom:80px!important;}
+  header .nav-links{background:#f2f0ea!important;color:#0a0a0a!important;}
+  .selected-work,.capability-section,.process-section,.film-feature,.case-story,.case-visual,.service-grid,.service-detail,.insight-grid,.contact-section,.investment-section{padding-top:80px!important;padding-bottom:80px!important;}
+}
+@media(max-width:640px){
+  .page-hero h1{font-size:clamp(48px,15vw,72px)!important;}
+  header .brand-name{font-size:15px!important;}
+}
