@@ -41,3 +41,5 @@ jobs:
             git commit -m "Import complete VisionCraft cinematic final review"
             git push origin main
           fi
+
+# one-time import trigger: 2026-09-12
