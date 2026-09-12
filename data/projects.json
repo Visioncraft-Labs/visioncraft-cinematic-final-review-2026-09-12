@@ -1,0 +1,98 @@
+[
+  {
+    "slug": "karbon-kreds",
+    "name": "Karbon Kreds",
+    "industry": "Climate technology",
+    "headline": "Building the digital infrastructure for Canada\u2019s carbon economy.",
+    "summary": "Carbon infrastructure & digital platform",
+    "services": [
+      "Brand strategy",
+      "UX/UI",
+      "Web development",
+      "SEO"
+    ],
+    "featured": true,
+    "featuredOrder": 1,
+    "theme": "climate",
+    "gallery": [],
+    "status": "Website & brand direction",
+    "challenge": "Make a complex carbon-market proposition easier to understand, navigate and act on.",
+    "strategy": "Organize the Canadian carbon-market proposition around four pathways: buy credits, sell credits, develop a project and explore investment. Give each route a clear next step and explain market context in plain language.",
+    "approach": "The live website combines responsive page design, an interactive Earth, company and team pages, market information and a contact journey. A map introduces representative activity regions without presenting them as verified live transactions.",
+    "delivery": "Website design and development, brand direction, deployment and search setup. No commercial uplift or market transaction figures are claimed.",
+    "credits": "VisionCraft Labs \u2014 design and website development.",
+    "external": "https://karbonkreds.com/",
+    "mediaId": "karbonkreds-website.jpg"
+  },
+  {
+    "slug": "address12",
+    "name": "Address12",
+    "industry": "Hospitality",
+    "headline": "The details of hospitality. Connected.",
+    "summary": "Hospitality operating system",
+    "services": [
+      "Product strategy",
+      "UX/UI",
+      "Software engineering",
+      "Automation"
+    ],
+    "featured": true,
+    "featuredOrder": 2,
+    "theme": "hospitality",
+    "gallery": [],
+    "status": "Proprietary hospitality software",
+    "challenge": "Bring reservations, guest records, billing, documents and day-to-day property administration into one coherent system.",
+    "strategy": "Start with the operator\u2019s workflow: know what is available, capture a booking, prepare the invoice and keep the guest record connected.",
+    "approach": "The application source connects reservations and rates, guest records, invoices, expenses, payroll, communications and reporting. A Windows service supports the web interface. The dashboard shown here is rendered from the actual 10.3.2 components using a demonstration dataset.",
+    "delivery": "A proprietary hospitality management application, developed through operator feedback and ongoing refinement. Demonstrations can be arranged to discuss the workflows relevant to your property.",
+    "credits": "VisionCraft Labs \u2014 proprietary software and product design.",
+    "mediaId": "address12-dashboard.jpg"
+  },
+  {
+    "slug": "skincare-objects",
+    "name": "Skincare Objects",
+    "industry": "Consumer brands \u00b7 Concept project",
+    "headline": "An everyday object. An extraordinary impression.",
+    "summary": "Skincare campaign \u00b7 Studio concept",
+    "services": [
+      "Creative direction",
+      "Campaign concept",
+      "AI-assisted visual production"
+    ],
+    "status": "Self-initiated concept \u00b7 Not commissioned client work",
+    "challenge": "Explore how a skincare product can become the focal point of a bold, cohesive launch campaign without relying on product claims.",
+    "strategy": "Use one memorable material idea: warm orange glass. Repeat its color, light and circular geometry to create a recognizable campaign language.",
+    "approach": "This concept pairs an AI-assisted product composition with a proposed digital campaign direction. Reflective surfaces and a tightly controlled orange palette make the product the central visual subject.",
+    "delivery": "A visual campaign concept presented to demonstrate creative direction and AI-assisted production. It is not a launched client engagement; packaging text is illustrative and no sales or performance results are claimed.",
+    "mediaId": "skincare-jar-orange-glow.jpg",
+    "featured": true,
+    "featuredOrder": 3,
+    "theme": "skincare-objects",
+    "gallery": [],
+    "credits": "VisionCraft Labs \u2014 self-initiated creative concept."
+  },
+  {
+    "slug": "daily-ritual",
+    "name": "Daily Ritual",
+    "industry": "Food & beverage \u00b7 Concept project",
+    "headline": "Make a small ritual worth remembering.",
+    "summary": "Coffee imagery & motion \u00b7 Studio concept",
+    "services": [
+      "Art direction",
+      "Campaign concept",
+      "Creative content",
+      "Short-form motion"
+    ],
+    "status": "Self-initiated concept \u00b7 Not commissioned client work",
+    "challenge": "Explore a coffee campaign that creates a recognizable mood across still imagery and a short product film.",
+    "strategy": "Build the concept around familiar moments: the cup, the light and the process. Let composition and rhythm carry the story.",
+    "approach": "The concept combines a coffee still-life study with a bean-to-cup motion piece from the studio collection. These visuals explore how one creative direction might translate across social and digital placements.",
+    "delivery": "An illustrative coffee campaign and motion exploration. This is not a commissioned client project, a functioning commerce platform or evidence of commercial results.",
+    "mediaId": "coffee-art-aesthetic.jpg",
+    "featured": true,
+    "featuredOrder": 4,
+    "theme": "daily-ritual",
+    "gallery": [],
+    "credits": "VisionCraft Labs \u2014 self-initiated creative concept."
+  }
+]
